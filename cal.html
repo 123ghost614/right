@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My calculator</title>
+    
+</head>
+<body> 
+   
+    <input type ="text" name="" id="display">
+    
+        <div class="display">
+        <div class="calculator">
+        <br>
+        <button onclick="append('1')">1</button>
+        <button onclick="append('2')">2</button>
+        <button onclick="append('3')">3</button>
+        <button onclick="append('+')">+</button>      
+        <br>
+        <button onclick="append('4')">4</button>
+        <button onclick="append('5')">5</button>
+        <button onclick="append('6')">6</button>
+        <button onclick="append('-')">-</button> 
+        <br>
+        <button onclick="append(7)">7</button>
+        <button onclick="append('8')">8</button>
+        <button onclick="append('9')">9</button>
+        <button onclick="append('*')">*</button>     
+        <br>       
+        <button class="clear" onclick="back()">Del</button>
+        <button onclick="compute()">=</button>
+        <button onclick="clears()">C</button>
+        <button onclick="append('/')">/</button>
+
+
+ <script>
+     const display = document.getElementById("display") 
+     function append(value){
+         display.value += value
+     }
+     function compute(){
+         display.value=eval(display.value)
+     }
+     function clears(){
+         display.value ='';
+     }
+     function back(){
+        display.value = display.value.slice(0, -1)
+     }
+     
+    
+     
+ </script>
+ <style>
+
+body {
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            margin: 10;
+            background-color: blanchedalmond;
+            display: grid;
+        }
+        .calculator{
+            background-color:black;
+            padding: 50px;
+            border-radius: 20px;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap:25px
+        }
+        .display{
+            background-color: rgb(38, 177, 131);
+            padding: 50px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .clear{
+            background-color: aliceblue;
+        }
+        
+        
+ </style>
+
+
+
+ </body>
+ </html>
